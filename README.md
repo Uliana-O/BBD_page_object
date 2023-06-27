@@ -1,1 +1,1 @@
-4?svg=true)](https://ci.appveyor.com/project/Uliana-O/bbd-page-object)
+[![Build status](https://ci.appveyor.com/api/projects/status/7pg6urer1c6w6kh4?svg=true)](https://ci.appveyor.com/project/Uliana-O/bbd-page-object)
