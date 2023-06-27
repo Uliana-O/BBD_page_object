@@ -36,26 +36,26 @@ public class DashboardPage {
     }
 
     public int getFirstCardBalance() {
-        val text = firstCard.text();
+        var text = firstCard.text();
         return extractBalanceFirstCard(text);
     }
 
     private int extractBalanceFirstCard(String text) {
-        val start = text.indexOf(balanceStart);
-        val finish = text.indexOf(balanceFinish);
-        val value = text.substring(start + balanceStart.length(), finish);
+        var start = text.indexOf(balanceStart);
+        var finish = text.indexOf(balanceFinish);
+        var value = text.substring(start + balanceStart.length(), finish);
         return Integer.parseInt(value);
     }
 
     public int getSecondCardBalance() {
-        val text = secondCard.text();
+        var text = secondCard.text();
         return extractBalanceSecondCard(text);
     }
 
     private int extractBalanceSecondCard(String text) {
-        val start = text.indexOf(balanceStart);
-        val finish = text.indexOf(balanceFinish);
-        val value = text.substring(start + balanceStart.length(), finish);
+        var start = text.indexOf(balanceStart);
+        var finish = text.indexOf(balanceFinish);
+        var value = text.substring(start + balanceStart.length(), finish);
         return Integer.parseInt(value);
     }
 

@@ -1,0 +1,1 @@
+4?svg=true)](https://ci.appveyor.com/project/Uliana-O/bbd-page-object)
