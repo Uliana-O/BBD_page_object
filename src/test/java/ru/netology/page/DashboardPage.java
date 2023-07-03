@@ -1,5 +1,6 @@
-package ru.netology.web.test;
+package ru.netology.page;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 

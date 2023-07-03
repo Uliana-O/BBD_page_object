@@ -1,8 +1,7 @@
-package ru.netology.web.test;
+package ru.netology.page;
 
-import ru.netology.web.data.DataHelper;
-
-import static com.codeborne.selenide.Selenide.$;
+import com.codeborne.selenide.Selenide;
+import ru.netology.data.DataHelper;
 
 public class LoginPage {
     public VerificationPage validLogin(DataHelper.AuthInfo info) {

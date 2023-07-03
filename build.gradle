@@ -15,8 +15,11 @@ repositories {
 
 dependencies {
     implementation 'com.codeborne:selenide:6.12.3'
+    implementation 'cc.ricecx:logsnag4j:1.1'
+    implementation 'com.github.taymindis:JavaHelper:1.0.5'
     testImplementation 'org.junit.jupiter:junit-jupiter:5.9.0'
     testImplementation 'com.codeborne:selenide:6.13.0'
+    annotationProcessor 'cc.ricecx:logsnag4j:1.1'
 
 
 }

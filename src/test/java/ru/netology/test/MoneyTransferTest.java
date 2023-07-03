@@ -1,14 +1,14 @@
-package ru.netology;
+package ru.netology.test;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import ru.netology.data.DataHelper;
 import ru.netology.page.DashboardPage;
 import ru.netology.page.LoginPage;
-import ru.netology.web.page.DashboardPage;
-import ru.netology.web.page.LoginPage;
+
 
 import static com.codeborne.selenide.Selenide.open;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class MoneyTransferTest {
 
@@ -20,7 +20,7 @@ class MoneyTransferTest {
         var loginPage = new LoginPage();
         var authInfo = DataHelper.getAuthInfo();
         var verificationPage = loginPage.validLogin( authInfo );
-        var verificationCode = DataHelper.getVerificationCodeFor( authInfo );
+        DataHelper.VerificationCode verificationCode = DataHelper.getVerificationCodeFor( authInfo );
         verificationPage.validVerify( verificationCode );
     }
 
@@ -33,7 +33,7 @@ class MoneyTransferTest {
         int balanceFirstCard = dashboardPage.getFirstCardBalance();
         int balanceSecondCard = dashboardPage.getSecondCardBalance();
         var moneyTransfer = dashboardPage.firstCardButton();
-        var infoCard = DataHelper.getSecondCardNumber();
+        DataHelper.CardNumber infoCard = DataHelper.getSecondCardNumber();
         String sum = "100";
         moneyTransfer.transferForm( sum, infoCard );
 
@@ -49,7 +49,7 @@ class MoneyTransferTest {
         int balanceFirstCard = dashboardPage.getFirstCardBalance();
         int balanceSecondCard = dashboardPage.getSecondCardBalance();
         var moneyTransfer = dashboardPage.secondCardButton();
-        var infoCard = DataHelper.getFirstCardNumber();
+        DataHelper.CardNumber infoCard = DataHelper.getFirstCardNumber();
         String sum = "1500";
         moneyTransfer.transferForm( sum, infoCard );
 
@@ -72,7 +72,7 @@ class MoneyTransferTest {
         var dashboardPage = new DashboardPage();
 
         var moneyTransfer = dashboardPage.secondCardButton();
-        var infoCard = DataHelper.getFirstCardNumber();
+        DataHelper.CardNumber infoCard = DataHelper.getFirstCardNumber();
         String sum = "20000";
         moneyTransfer.transferForm( sum, infoCard );
         moneyTransfer.getError();
