@@ -1,27 +1,22 @@
-package ru.netology.web.page;
-import com.codeborne.selenide.ElementsCollection;
-import com.codeborne.selenide.SelenideElement;
-import lombok.val;
-import ru.netology.web.data.DataHelper;
+package ru.netology.web.test;
 
-import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$$;
+import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.SelenideElement;
 
 
 public class DashboardPage {
-    private SelenideElement heading = $( "[data-test-id=dashboard]" );
-    private SelenideElement firstCard = $$( ".list__item" ).first();
-    private SelenideElement secondCard = $$( ".list__item" ).last();
-    private SelenideElement reload = $( "[data-test-id=''action-reload']" );
-    private SelenideElement firstCardButton = $$( "[data-test-id='action-deposit']" ).first();
-    private SelenideElement secondCardButton = $$( "[data-test-id='action-deposit']" ).last();
+    private SelenideElement heading = Selenide.$( "[data-test-id=dashboard]" );
+    private SelenideElement firstCard = Selenide.$$( ".list__item" ).first();
+    private SelenideElement secondCard = Selenide.$$( ".list__item" ).last();
+    private SelenideElement reload = Selenide.$( "[data-test-id=''action-reload']" );
+    private SelenideElement firstCardButton = Selenide.$$( "[data-test-id='action-deposit']" ).first();
+    private SelenideElement secondCardButton = Selenide.$$( "[data-test-id='action-deposit']" ).last();
     private final String balanceStart = "баланс: ";
     private final String balanceFinish = " р.";
 
 
     public DashboardPage() {
-        heading.shouldBe( visible );
+        heading.shouldBe( Condition.visible );
     }
 
     public MoneyTransfer firstCardButton() {
